@@ -1,6 +1,7 @@
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './styles.module.css'
+import clsx from 'clsx'
 
 export interface ViewProps {
   label: string
@@ -14,6 +15,7 @@ interface NavigationBarProps {
 
 function NavigationButton(props: ViewProps) {
   const navigate = useNavigate()
+  const [clicked, setClikced] = useState<boolean>()
 
   const handleClick = useCallback(() => {
     navigate(props.path)
@@ -21,8 +23,11 @@ function NavigationButton(props: ViewProps) {
 
   return (
     <button
+      style={clicked ? { backgroundColor: '#007910' } : {}}
       className={styles.naviButton}
       onClick={handleClick}
+      onMouseDown={() => setClikced(true)}
+      onMouseUp={() => setClikced(false)}
     >
       Go to {props.label}
     </button>
