@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
+import { CustomizableHeader } from './customAndContextHooks'
 
 export default function HooksExample() {
   const notes = `To add state to a component, use one of these Hooks:
@@ -15,6 +16,7 @@ export default function HooksExample() {
       <h1>Learning Hooks</h1>
       <h3>Notes</h3>
       <ReactMarkdown>{notes}</ReactMarkdown>
+      <CustomizableHeader />
     </div>
   )
 }
