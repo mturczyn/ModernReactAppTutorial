@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import { CustomizableHeader } from './customAndContextHooks'
+import { useIsOnline } from './useIsOnline'
 
 export default function HooksExample() {
   const notes = `To add state to a component, use one of these Hooks:
@@ -11,12 +12,15 @@ export default function HooksExample() {
  
  useContext reads and subscribes to a context`
 
+  const isOnline = useIsOnline()
+
   return (
     <div>
       <h1>Learning Hooks</h1>
       <h3>Notes</h3>
       <ReactMarkdown>{notes}</ReactMarkdown>
       <CustomizableHeader />
+      <h4>Online status: {isOnline ? 'ON' : 'OFF'}LINE</h4>
     </div>
   )
 }
