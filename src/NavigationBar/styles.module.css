@@ -16,7 +16,7 @@
 .naviContainer {
   background-color: #aaffaa;
   margin: 0 0 0.5rem 0;
-  border: solid black;
+  border: solid #004e0a;
   height: 100%; /* Full-height: remove this if you want "auto" height */
   width: 10rem; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
