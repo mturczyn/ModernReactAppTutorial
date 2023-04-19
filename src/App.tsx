@@ -7,6 +7,7 @@ import HooksExample from './learningHooks/HooksExamples'
 import { ViewProps } from './NavigationBar/NavigationBar'
 import NavigationBar from './NavigationBar/NavigationBar'
 import NumberList from './pureComponents/impureComponentExample'
+import { StateExamples } from './state/stateExamples'
 
 interface ViewRouteProps extends ViewProps {
   element: JSX.Element
@@ -27,6 +28,11 @@ const views: ViewRouteProps[] = [
     path: 'NumberList',
     element: <NumberList />,
     label: 'NumberList',
+  },
+  {
+    path: 'StateExamples',
+    element: <StateExamples />,
+    label: 'StateExamples',
   },
 ]
 

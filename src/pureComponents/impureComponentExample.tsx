@@ -10,7 +10,7 @@ export default function NumberList() {
     <>
       <h1>Impure components</h1>
       <p>
-        Below is example of impure component that uses variable declare outside
+        Below is example of impure component that uses variable declared outside
         of it
       </p>
       <ConsecutiveNumber />
