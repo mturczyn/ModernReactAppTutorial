@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import './stateExamples.css'
 
 export function StateExamples() {
   return (
-    <div>
+    <div className='stateExamplesContainer'>
       <Greet />
       <UnexpectedIncrementBy3 />
     </div>
