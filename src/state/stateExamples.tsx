@@ -1,4 +1,8 @@
 import { useState } from 'react'
+import {
+  ObjectInStateInvalidExample,
+  UpdatingObjectsWithSpreadSyntax,
+} from './objectsInState'
 import './stateExamples.css'
 
 export function StateExamples() {
@@ -6,6 +10,8 @@ export function StateExamples() {
     <div className='stateExamplesContainer'>
       <Greet />
       <UnexpectedIncrementBy3 />
+      <ObjectInStateInvalidExample />
+      <UpdatingObjectsWithSpreadSyntax />
     </div>
   )
 }
@@ -30,7 +36,7 @@ function UnexpectedIncrementBy3() {
       <p>This component shows examples of incrementing number value by 3. </p>
       <p>
         First button just sets incremented state three times, which results in
-        incrementing the same value three times (so at start we ahve 0 and we
+        incrementing the same value three times (so at start we have 0 and we
         increment it three times to 1)
       </p>
       <p>
