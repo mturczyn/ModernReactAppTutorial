@@ -1,7 +1,38 @@
 import { useState } from 'react'
+import { useImmer } from 'use-immer'
+
+interface Person {
+  firstname: string
+  lastname: string
+  details: {
+    age: number
+    footsize: number
+    lovepets: boolean
+  }
+}
+
+function PersonView(person: Person) {
+  const [showDetails, setShowDetails] = useState(false)
+  return (
+    <div>
+      <p>First name: {person.firstname}</p>
+      <p>Last name: {person.lastname}</p>
+      <button onClick={() => setShowDetails(x => !x)}>
+        {showDetails ? 'Hide' : 'Show'} details
+      </button>
+      {showDetails && (
+        <div>
+          <p>Age: {person.details.age}</p>
+          <p>Foot size: {person.details.footsize}</p>
+          <p>Loves pets: {person.details.lovepets.toString()}</p>
+        </div>
+      )}
+    </div>
+  )
+}
 
 export function UpdatingObjectsWithSpreadSyntax() {
-  const [person, setPerson] = useState({
+  const [person, setPerson] = useState<Person>({
     firstname: 'michal',
     lastname: 'turczyn',
     details: {
@@ -10,7 +41,16 @@ export function UpdatingObjectsWithSpreadSyntax() {
       lovepets: true,
     },
   })
-  const [showDetails, setShowDetails] = useState(false)
+
+  const [otherPerson, updateOtherPerson] = useImmer({
+    firstname: 'other michal',
+    lastname: 'other turczyn',
+    details: {
+      age: 20,
+      footsize: 44,
+      lovepets: true,
+    },
+  })
 
   // Here we use nested spread syntax to change only one property in nested object in state object
   const changeLovingPets = () => {
@@ -20,21 +60,23 @@ export function UpdatingObjectsWithSpreadSyntax() {
     }))
   }
 
+  // Here is more concise version of updating using Immer package.
+  const changeOtherPersonLovingPets = () => {
+    const currentLovePets = otherPerson.details.lovepets
+    updateOtherPerson(draft => {
+      draft.details.lovepets = !currentLovePets
+    })
+  }
+
   return (
     <div>
-      <p>First name: {person.firstname}</p>
-      <p>Last name: {person.lastname}</p>
-      <button onClick={() => setShowDetails(x => !x)}>
-        {showDetails ? 'Hide' : 'Show'} details
-      </button>
       <button onClick={changeLovingPets}>Change loving pets</button>
-      {showDetails && (
-        <div>
-          <p>Age: {person.details.age}</p>
-          <p>Foot size: {person.details.footsize}</p>
-          <p>Loves pets: {person.details.lovepets.toString()}</p>
-        </div>
-      )}
+      <PersonView {...person} />
+
+      <button onClick={changeOtherPersonLovingPets}>
+        Change other loving pets
+      </button>
+      <PersonView {...otherPerson} />
     </div>
   )
 }
