@@ -4,6 +4,7 @@ import {
   UpdatingObjectsWithSpreadSyntax,
 } from './objectsInState'
 import './stateExamples.css'
+import { PeopleList } from './arraysInState'
 
 export function StateExamples() {
   return (
@@ -12,6 +13,7 @@ export function StateExamples() {
       <UnexpectedIncrementBy3 />
       <ObjectInStateInvalidExample />
       <UpdatingObjectsWithSpreadSyntax />
+      <PeopleList />
     </div>
   )
 }
