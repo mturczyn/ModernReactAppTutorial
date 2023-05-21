@@ -5,6 +5,8 @@ import {
 } from './objectsInState'
 import './stateExamples.css'
 import { PeopleList } from './arraysInState'
+import { ResettingStatePitfall } from './resettingStatePitfall'
+import ResttingState from './resettingState'
 
 export function StateExamples() {
   return (
@@ -14,6 +16,8 @@ export function StateExamples() {
       <ObjectInStateInvalidExample />
       <UpdatingObjectsWithSpreadSyntax />
       <PeopleList />
+      <ResettingStatePitfall />
+      <ResttingState />
     </div>
   )
 }
