@@ -8,6 +8,7 @@ import { ViewProps } from './NavigationBar/NavigationBar'
 import NavigationBar from './NavigationBar/NavigationBar'
 import NumberList from './pureComponents/impureComponentExample'
 import { StateExamples } from './state/stateExamples'
+import ReducersExamples from './reducers/ReducersExamples'
 
 interface ViewRouteProps extends ViewProps {
   element: JSX.Element
@@ -33,6 +34,11 @@ const views: ViewRouteProps[] = [
     path: 'StateExamples',
     element: <StateExamples />,
     label: 'StateExamples',
+  },
+  {
+    path: 'reducersExample',
+    element: <ReducersExamples />,
+    label: 'Reducers examples and notes',
   },
 ]
 

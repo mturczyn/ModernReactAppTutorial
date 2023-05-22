@@ -29,7 +29,7 @@ function NavigationButton(props: ViewProps) {
       onMouseDown={() => setClikced(true)}
       onMouseUp={() => setClikced(false)}
     >
-      Go to {props.label}
+      {props.label}
     </button>
   )
 }
