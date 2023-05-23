@@ -1,12 +1,12 @@
-import { useContext, useState } from 'react'
-import { TasksDispatchContext } from './TaskContexts'
+import { useState } from 'react'
 import { TasksActions } from './tasksReducer'
+import { useTasksDispatchContext } from './TasksContextsProvider'
 
 let nextId = 3
 
 export default function AddTask() {
   const [text, setText] = useState('')
-  const dispatch = useContext(TasksDispatchContext)
+  const dispatch = useTasksDispatchContext()
 
   return (
     <div>

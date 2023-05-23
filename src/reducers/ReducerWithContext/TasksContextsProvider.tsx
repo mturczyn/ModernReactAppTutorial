@@ -1,6 +1,7 @@
 import { useImmerReducer } from 'use-immer'
 import { TasksContext, TasksDispatchContext } from './TaskContexts'
 import { tasksReducer } from './tasksReducer'
+import { useContext } from 'react'
 
 export default function TasksContextsProvider({ children }: any) {
   const [tasks, dispatch] = useImmerReducer(tasksReducer, initialTasks)
@@ -19,3 +20,11 @@ const initialTasks = [
   { id: 1, text: 'Watch a puppet show', done: false },
   { id: 2, text: 'Lennon Wall pic', done: false },
 ]
+
+export function useTasksContext() {
+  return useContext(TasksContext)
+}
+
+export function useTasksDispatchContext() {
+  return useContext(TasksDispatchContext)
+}

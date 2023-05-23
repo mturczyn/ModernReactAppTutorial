@@ -1,11 +1,12 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import { TasksActions } from './tasksReducer'
-import { TasksDispatchContext } from './TaskContexts'
+import { useTasksDispatchContext } from './TasksContextsProvider'
 
 export default function TaskItem({ task }: any) {
-  const dispatch = useContext(TasksDispatchContext)
+  const dispatch = useTasksDispatchContext()
   const [isEdit, setIsEdit] = useState(false)
   const [text, setText] = useState(task.text)
+
   return (
     <>
       <input type='checkbox' />
