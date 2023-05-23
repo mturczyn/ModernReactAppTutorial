@@ -10,6 +10,7 @@ import NumberList from './pureComponents/impureComponentExample'
 import { StateExamples } from './state/stateExamples'
 import ReducersExamples from './reducers/ReducersExamples'
 import PassingPropsWithContext from './passingPropsWithContext/propsThroughContext'
+import RefExamples from './usingRef/RefExamples'
 
 interface ViewRouteProps extends ViewProps {
   element: JSX.Element
@@ -45,6 +46,11 @@ const views: ViewRouteProps[] = [
     path: 'passingPropsWithContext',
     element: <PassingPropsWithContext />,
     label: 'Using context',
+  },
+  {
+    path: 'refExamples',
+    element: <RefExamples />,
+    label: 'useRef examples',
   },
 ]
 
