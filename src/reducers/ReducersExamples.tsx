@@ -1,5 +1,6 @@
 import TaskApp from './TaskApp'
 import TaskAppWithReducers from './TaskAppWithReducers/TaskAppWithReducers'
+import TaskAppWithReducersWithContext from './ReducerWithContext/TaskAppWithReducersWithContext'
 
 export default function ReducersExamples() {
   return (
@@ -12,6 +13,13 @@ export default function ReducersExamples() {
         handling logic from view file.
       </p>
       <TaskAppWithReducers />
+      <p>
+        Below implementation uses yet one more technique to simplify and better
+        organize the code: storing reducer's disptach and state in the context,
+        that can be then accessed by any child component and easily dispatch an
+        event to handle.
+      </p>
+      <TaskAppWithReducersWithContext />
     </div>
   )
 }

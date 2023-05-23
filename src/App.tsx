@@ -9,6 +9,7 @@ import NavigationBar from './NavigationBar/NavigationBar'
 import NumberList from './pureComponents/impureComponentExample'
 import { StateExamples } from './state/stateExamples'
 import ReducersExamples from './reducers/ReducersExamples'
+import PassingPropsWithContext from './passingPropsWithContext/propsThroughContext'
 
 interface ViewRouteProps extends ViewProps {
   element: JSX.Element
@@ -39,6 +40,11 @@ const views: ViewRouteProps[] = [
     path: 'reducersExample',
     element: <ReducersExamples />,
     label: 'Reducers examples and notes',
+  },
+  {
+    path: 'passingPropsWithContext',
+    element: <PassingPropsWithContext />,
+    label: 'Using context',
   },
 ]
 
