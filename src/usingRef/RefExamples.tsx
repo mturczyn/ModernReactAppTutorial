@@ -6,6 +6,7 @@ import { FocuasbleInput } from './FocusableInput'
 import { Gallery, GalleryRefactoredWithRefCallback } from './ListOfImages'
 import Stopwatch from './Stopwatch'
 import { MyForm, MyFormWithCorrectRef } from './FocusableCustomInput'
+import ToggleMessage from './SimpleMessageToggle'
 
 export default function RefExamples() {
   return (
@@ -49,6 +50,15 @@ export default function RefExamples() {
       <MyForm />
       <p>Below example shows correct passing ref to custom component:</p>
       <MyFormWithCorrectRef />
+      <p>
+        Below we have two ways of updating the view with React. State variable
+        decided whether React should render or not the text (using conditional
+        rendering), while the second buttom directly removes HTML element from
+        the DOM, causing to desynchronize React tree snapshot (what it
+        remembers) and actual DOM structure. Thus, ater clicking it, when first
+        button is clicker, the app crashes.
+      </p>
+      <ToggleMessage message='HELLO world' />
     </div>
   )
 }
