@@ -30,16 +30,14 @@ export function CounterButtonUsingRef() {
         Click to increment counter: {counter.current}
       </button>
       <br />
-      <span>
-        Toggle flag to force re-render and see update, flag is{' '}
-        {String(renderFlag)}
-      </span>
+      <span>Toggle flag to force re-render and see update:</span>
       <button
         style={{ margin: '0.5rem' }}
         onClick={() => setRenderFlag(x => !x)}
       >
         Refresh
       </button>
+      Flag is <b>{String(renderFlag)}</b>
     </div>
   )
 }

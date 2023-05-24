@@ -2,7 +2,10 @@ import {
   CounterButtonUsingRef,
   CounterButtonUsingState,
 } from './CounterButtons'
+import { FocuasbleInput } from './FocusableInput'
+import { Gallery, GalleryRefactoredWithRefCallback } from './ListOfImages'
 import Stopwatch from './Stopwatch'
+import { MyForm, MyFormWithCorrectRef } from './FocusableCustomInput'
 
 export default function RefExamples() {
   return (
@@ -24,6 +27,28 @@ export default function RefExamples() {
       <CounterButtonUsingRef />
       <br />
       <CounterButtonUsingState />
+      <p>
+        Using refs in React is also especially useful when we need to
+        programatically interact with HTML DOM elements, for example for getting
+        focus or scrolling into view.
+      </p>
+      <p>Below we have focusable input, click the button to focus the input.</p>
+      <FocuasbleInput />
+      <p>
+        Below here's gallery and has buttons to scroll particular image into
+        view.
+      </p>
+      <Gallery />
+      <p>Below is refactored gallery to use ref callback</p>
+      <GalleryRefactoredWithRefCallback />
+      <p>
+        Pssing refs to custom components is not supported by default, so if we
+        use ref attribute on custom components, it won't work as shown below -
+        input is not custom component:
+      </p>
+      <MyForm />
+      <p>Below example shows correct passing ref to custom component:</p>
+      <MyFormWithCorrectRef />
     </div>
   )
 }
