@@ -42,6 +42,7 @@ export default function NavigationBar(props: NavigationBarProps) {
           <NavigationButton
             label={x.label}
             path={x.path}
+            key={x.path}
           />
         ))}
         <img

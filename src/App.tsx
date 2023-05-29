@@ -11,6 +11,7 @@ import { StateExamples } from './state/stateExamples'
 import ReducersExamples from './reducers/ReducersExamples'
 import PassingPropsWithContext from './passingPropsWithContext/propsThroughContext'
 import RefExamples from './usingRef/RefExamples'
+import { EffectsExamples } from './effects/EffectsExamples'
 
 interface ViewRouteProps extends ViewProps {
   element: JSX.Element
@@ -52,6 +53,11 @@ const views: ViewRouteProps[] = [
     element: <RefExamples />,
     label: 'useRef examples',
   },
+  {
+    path: 'effectExamples',
+    element: <EffectsExamples />,
+    label: 'useEffect examples',
+  },
 ]
 
 function App() {
@@ -62,6 +68,7 @@ function App() {
           <Routes>
             {views.map(x => (
               <Route
+                key={x.path}
                 path={x.path}
                 element={x.element}
               />
