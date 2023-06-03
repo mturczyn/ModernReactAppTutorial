@@ -1,6 +1,7 @@
 import { VideoApplication } from './VideoApplication'
 import { PopupApplicationToggle } from './PopupApplicationToggle'
 import { TimerCounterExample } from './TimerCounter'
+import { IsOnlineIndicator } from './IsOnlineIndicator'
 
 export function EffectsExamples() {
   return (
@@ -52,6 +53,7 @@ function App() { ... }`}
       <VideoApplication />
       <PopupApplicationToggle />
       <TimerCounterExample />
+      <IsOnlineIndicator />
     </div>
   )
 }

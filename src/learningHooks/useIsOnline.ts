@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useSyncExternalStore } from 'react'
 
 export function useIsOnline() {
   const [isOnline, setIsOnline] = useState(true)
@@ -21,4 +21,19 @@ export function useIsOnline() {
   }, [])
 
   return isOnline
+}
+
+export function useIsOnlineBetter() {
+  return useSyncExternalStore(
+    (callback: any) => {
+      window.addEventListener('online', callback)
+      window.addEventListener('offline', callback)
+      return () => {
+        window.removeEventListener('online', callback)
+        window.removeEventListener('offline', callback)
+      }
+    },
+    () => navigator.onLine, // How to get the value on the client
+    () => true // How to get the value on the server
+  )
 }

@@ -11,10 +11,6 @@ export function TimerCounterExample() {
       </p>
       <TimerCounter withTimerCleanup={true} />
       <TimerCounter withTimerCleanup={false} />
-      <p>
-        Below timer has no dependency array and no clean up function in effect
-        which increments counter. Thus it increments on every render.
-      </p>
     </>
   )
 }
