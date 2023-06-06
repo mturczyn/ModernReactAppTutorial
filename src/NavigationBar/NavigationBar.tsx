@@ -38,13 +38,21 @@ export default function NavigationBar(props: NavigationBarProps) {
   return (
     <div>
       <div className={styles.naviContainer}>
-        {props.pages.map(x => (
-          <NavigationButton
-            label={x.label}
-            path={x.path}
-            key={x.path}
-          />
-        ))}
+        <div
+          style={{
+            overflowY: 'scroll',
+            overflowX: 'hidden',
+            maxHeight: '35rem',
+          }}
+        >
+          {props.pages.map(x => (
+            <NavigationButton
+              label={x.label}
+              path={x.path}
+              key={x.path}
+            />
+          ))}
+        </div>
         <img
           src='bluey.avif'
           alt='Bluey!'

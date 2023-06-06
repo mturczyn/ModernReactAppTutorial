@@ -31,10 +31,10 @@
 }
 
 .naviContainer > img {
-  width: 20rem;
-  position: absolute;
+  height: 8rem;
   bottom: 0;
-  left: -5rem;
+  position: absolute;
+  left: -1.5rem;
 }
 
 .naviContainer ~ div {

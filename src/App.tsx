@@ -12,6 +12,9 @@ import ReducersExamples from './reducers/ReducersExamples'
 import PassingPropsWithContext from './passingPropsWithContext/propsThroughContext'
 import RefExamples from './usingRef/RefExamples'
 import { EffectsExamples } from './effects/EffectsExamples'
+import { ChatApp } from './effects/eventsAndEffects'
+import { MyForm } from './usingRef/FocusableCustomInput'
+import FormWithCustomHooks from './effects/reusingLogicWithCustomHooks'
 
 interface ViewRouteProps extends ViewProps {
   element: JSX.Element
@@ -57,6 +60,16 @@ const views: ViewRouteProps[] = [
     path: 'effectExamples',
     element: <EffectsExamples />,
     label: 'useEffect examples',
+  },
+  {
+    path: 'ChatApp',
+    element: <ChatApp />,
+    label: 'Chat app for effects and event examples',
+  },
+  {
+    path: 'reusingLogicWithCustomHooks',
+    element: <FormWithCustomHooks />,
+    label: 'Custom Hooks - reusing logic',
   },
 ]
 
