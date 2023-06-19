@@ -15,6 +15,7 @@ import { EffectsExamples } from './effects/EffectsExamples'
 import { ChatApp } from './effects/eventsAndEffects'
 import { MyForm } from './usingRef/FocusableCustomInput'
 import FormWithCustomHooks from './effects/reusingLogicWithCustomHooks'
+import MiscExamples from './misc/MiscExamples'
 
 interface ViewRouteProps extends ViewProps {
   element: JSX.Element
@@ -70,6 +71,11 @@ const views: ViewRouteProps[] = [
     path: 'reusingLogicWithCustomHooks',
     element: <FormWithCustomHooks />,
     label: 'Custom Hooks - reusing logic',
+  },
+  {
+    path: 'miscellaneousexamples',
+    element: <MiscExamples />,
+    label: 'Miscellaneous Examples',
   },
 ]
 
