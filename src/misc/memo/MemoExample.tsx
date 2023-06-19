@@ -18,7 +18,7 @@ export default function SimpleGreetingForm() {
   )
 
   return (
-    <>
+    <div>
       <p>
         The second greeting is memoized component, which does not re-render when
         parent is re-rendering, it only re-renders when it's props or state
@@ -70,7 +70,7 @@ export default function SimpleGreetingForm() {
         name={name}
         renderCountChanged={renderMemoCountIncreased}
       />
-    </>
+    </div>
   )
 }
 

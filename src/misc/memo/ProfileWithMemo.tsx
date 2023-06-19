@@ -10,7 +10,7 @@ export function MemoExampleWithUseMemo() {
   const notMemoPerson = { name, age }
 
   return (
-    <>
+    <div>
       <p>
         Greeting is memoized component, which uses object as prop, since object
         is ref type, then it would rerender each time, despite memoization.
@@ -51,7 +51,7 @@ export function MemoExampleWithUseMemo() {
         Show with memoized prop:{' '}
         <input
           type='checkbox'
-          value={address}
+          checked={showWithMemoizedProp}
           onChange={(e: any) => setShowWithMemoizedProp(e.target.value)}
         ></input>
       </label>
@@ -60,7 +60,7 @@ export function MemoExampleWithUseMemo() {
       ) : (
         <Greeting person={notMemoPerson} />
       )}
-    </>
+    </div>
   )
 }
 

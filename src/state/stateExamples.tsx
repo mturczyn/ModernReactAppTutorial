@@ -3,14 +3,13 @@ import {
   ObjectInStateInvalidExample,
   UpdatingObjectsWithSpreadSyntax,
 } from './objectsInState'
-import './stateExamples.css'
 import { PeopleList } from './arraysInState'
 import { ResettingStatePitfall } from './resettingStatePitfall'
 import ResttingState from './resettingState'
 
 export function StateExamples() {
   return (
-    <div className='stateExamplesContainer'>
+    <div className='examplesContainer'>
       <Greet />
       <UnexpectedIncrementBy3 />
       <ObjectInStateInvalidExample />

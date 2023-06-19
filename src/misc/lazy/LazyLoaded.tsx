@@ -7,7 +7,7 @@ export function LazyExample() {
   const [name, setName] = useState('')
 
   return (
-    <>
+    <div>
       <p>
         When greeting is shown, it will fetch component from server (can be
         observed in Network tab in dev tools). But it will be cached, so it will
@@ -33,6 +33,6 @@ export function LazyExample() {
           <Greeting name={name} />
         </Suspense>
       )}
-    </>
+    </div>
   )
 }
