@@ -12,18 +12,18 @@ export default function TabButton({
   }
   return (
     <button
+      disabled={isPending}
       onClick={() => {
         if (shouldUseTransition) {
           startTransition(() => {
             onClick()
           })
         } else {
-          console.log('>>', 'not using transition')
           onClick()
         }
       }}
     >
-      {children}
+      {isPending ? 'Loading/rendering tab' : children}
     </button>
   )
 }
