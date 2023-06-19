@@ -44,7 +44,7 @@ export function ChatApp() {
           value={roomId}
           onChange={e => setRoomId(e.target.value)}
         >
-          <option value='general'>genral</option>
+          <option value='general'>general</option>
           <option value='travel'>travel</option>
           <option value='music'>music</option>
         </select>
