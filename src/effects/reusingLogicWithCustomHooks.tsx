@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useCallback, useDebugValue, useState } from 'react'
 
 export default function FormWithCustomHooks() {
   const firstNameProps = useFormInput('Michał')
@@ -32,12 +32,16 @@ export default function FormWithCustomHooks() {
   )
 }
 
-function useFormInput(initialValue: any) {
+export function useFormInput(initialValue: any) {
   const [value, setValue] = useState(initialValue)
+  useDebugValue(`Custom form input: ${value}`)
 
-  function handleChange(e: any) {
-    setValue(e.target.value)
-  }
+  const handleChange = useCallback(
+    (e: any) => {
+      setValue(e.target.value)
+    },
+    [setValue]
+  )
 
   const inputProps = {
     value: value,

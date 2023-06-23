@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 import { CustomizableHeader } from './customAndContextHooks'
 import { useIsOnline } from './useIsOnline'
