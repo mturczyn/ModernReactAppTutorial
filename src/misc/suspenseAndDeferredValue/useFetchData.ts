@@ -7,7 +7,7 @@ export default function useFetchData(url: any) {
     fetchRef.current = fetchData(url)
   }, [url])
 
-  return fetchRef.current
+  return { read: fetchRef.current?.read }
 }
 
 function fetchData(url: any) {
@@ -36,7 +36,7 @@ function fetchData(url: any) {
           throw fetchPromise
         case 'error':
           // This should be handled by error boundary.
-          throw result
+          return JSON.stringify(result)
         default:
           // When promise resolves without errors, we just return the result.
           return result
