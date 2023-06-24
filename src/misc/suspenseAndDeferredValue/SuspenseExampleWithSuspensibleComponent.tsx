@@ -43,6 +43,8 @@ export default function SuspenseExampleWithSuspensibleComponent() {
       <button
         onClick={() =>
           setQuery(
+            // Cut after first dot to force invalid domain, which will also take some time to
+            // load, which also presents greatly Suspense in action.
             WORKING_URL_FOR_HTTP_GET.substring(
               0,
               WORKING_URL_FOR_HTTP_GET.indexOf('.') + 1
