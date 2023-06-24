@@ -35,7 +35,12 @@ export function StatusDisplayerWithErrorHandling({ url }: any) {
     <div style={{ color: 'red' }}>
       <h3>There was error while fetching data. Details:</h3>
       {showDetailsBtn}
-      {showDetails && <p>{responseData?.error}</p>}
+      {showDetails && (
+        <>
+          <p>{responseData?.error}</p>
+          <p>More can be seen in browser's console.</p>
+        </>
+      )}
     </div>
   )
 

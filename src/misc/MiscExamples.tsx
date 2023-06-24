@@ -4,6 +4,7 @@ import { MemoExampleWithUseMemo } from './memo/ProfileWithMemo'
 import TabContainer from './transition/App'
 import SuspenseExampleWithSuspensibleComponent from './suspenseAndDeferredValue/SuspenseExampleWithSuspensibleComponent'
 import { DeferredValueExample } from './suspenseAndDeferredValue/DeferredValueExample'
+import WecomingPanelWithLazyLoading from './suspenseAndDeferredValue/componentsForLazyLoad/WelcomingPanelWithLazyLoading'
 
 export default function MiscExamples() {
   return (
@@ -14,6 +15,7 @@ export default function MiscExamples() {
       <SimpleGreetingForm />
       <MemoExampleWithUseMemo />
       <TabContainer />
+      <WecomingPanelWithLazyLoading />
     </div>
   )
 }

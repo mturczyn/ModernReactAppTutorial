@@ -64,7 +64,7 @@ export default function SuspenseExampleWithSuspensibleComponent() {
       </label>
       <Suspense
         key={query}
-        fallback={<h2>Loading from HTTP request...</h2>}
+        fallback={<h2>Loading HTTP request...</h2>}
       >
         {showWithBetterErrorHandling ? (
           <StatusDisplayerWithErrorHandling url={query} />
