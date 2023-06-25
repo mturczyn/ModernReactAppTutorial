@@ -16,9 +16,9 @@ export default function SuspenseExampleWithSuspensibleComponent() {
       <p>
         Below component has implemented loading indication using suspense.
         Suspense component is able to "await" component loading (if it was
-        define with React.lazy or when we have "suspensible" component). We have
-        implemented suspensible component that "suspends" each time it makes
-        HTTP request, triggered by changing URL. In detail, the component
+        defined with <i>React.lazy</i> or when we have "suspensible" component).
+        We have implemented suspensible component that "suspends" each time it
+        makes HTTP request, triggered by changing URL. In detail, the component
         "throws promise" it is awaiting as error, which then Suspense catches
         and awaits, allowing child component to access already resolved
         (awaited) promise.

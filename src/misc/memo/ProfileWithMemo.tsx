@@ -17,7 +17,7 @@ export function MemoExampleWithUseMemo() {
       </p>
       <p>
         And so even changing address would trigger to rerender memoized
-        component. Console log can be seen on each render.
+        component. <b>Console log can be seen on each render.</b>
       </p>
       <p>
         In order to fix that we introduced useMemo to also memoize the object
@@ -52,7 +52,7 @@ export function MemoExampleWithUseMemo() {
         <input
           type='checkbox'
           checked={showWithMemoizedProp}
-          onChange={(e: any) => setShowWithMemoizedProp(e.target.value)}
+          onChange={(e: any) => setShowWithMemoizedProp(e.target.checked)}
         ></input>
       </label>
       {showWithMemoizedProp ? (

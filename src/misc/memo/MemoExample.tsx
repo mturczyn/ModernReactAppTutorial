@@ -58,7 +58,7 @@ export default function SimpleGreetingForm() {
       </label>
       {noMemoRenderCnt > maxRenders ? (
         <b>
-          <p>Hidden due to high amount of rerenders</p>
+          <p style={{ color: 'red' }}>Hidden due to high amount of rerenders</p>
         </b>
       ) : (
         <Greeting
