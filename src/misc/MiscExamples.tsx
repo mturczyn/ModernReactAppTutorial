@@ -5,6 +5,7 @@ import TabContainer from './transition/App'
 import SuspenseExampleWithSuspensibleComponent from './suspenseAndDeferredValue/SuspenseExampleWithSuspensibleComponent'
 import { DeferredValueExample } from './suspenseAndDeferredValue/DeferredValueExample'
 import WecomingPanelWithLazyLoading from './suspenseAndDeferredValue/componentsForLazyLoad/WelcomingPanelWithLazyLoading'
+import UseIdExample from './UseIdExample'
 
 export default function MiscExamples() {
   return (
@@ -16,6 +17,7 @@ export default function MiscExamples() {
       <MemoExampleWithUseMemo />
       <TabContainer />
       <WecomingPanelWithLazyLoading />
+      <UseIdExample />
     </div>
   )
 }
