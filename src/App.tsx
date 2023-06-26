@@ -15,6 +15,7 @@ import { ChatApp } from './effects/eventsAndEffects'
 import FormWithCustomHooks from './effects/reusingLogicWithCustomHooks'
 import MiscExamples from './misc/MiscExamples'
 import styles from './styles.module.css'
+import TanStackApp from './tanStackQuery/ExampleApiData'
 
 interface ViewRouteProps extends ViewProps {
   element: JSX.Element
@@ -75,6 +76,11 @@ const views: ViewRouteProps[] = [
     path: 'miscellaneousexamples',
     element: <MiscExamples />,
     label: 'Miscellaneous Examples',
+  },
+  {
+    path: 'TanStackApp',
+    element: <TanStackApp />,
+    label: 'TanStack Example',
   },
 ]
 
