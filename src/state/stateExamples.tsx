@@ -6,10 +6,11 @@ import {
 import { PeopleList } from './arraysInState'
 import { ResettingStatePitfall } from './resettingStatePitfall'
 import ResttingState from './resettingState'
+import styles from '../styles.module.css'
 
 export function StateExamples() {
   return (
-    <div className='examplesContainer'>
+    <div className={styles.examplesContainer}>
       <Greet />
       <UnexpectedIncrementBy3 />
       <ObjectInStateInvalidExample />

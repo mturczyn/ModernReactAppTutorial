@@ -1,6 +1,5 @@
 import React from 'react'
 import logo from './logo.svg'
-import './App.css'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import GettingStarted from './gettingStarted/GettingStartedTestArea'
 import HooksExample from './learningHooks/HooksExamples'
@@ -13,9 +12,9 @@ import PassingPropsWithContext from './passingPropsWithContext/propsThroughConte
 import RefExamples from './usingRef/RefExamples'
 import { EffectsExamples } from './effects/EffectsExamples'
 import { ChatApp } from './effects/eventsAndEffects'
-import { MyForm } from './usingRef/FocusableCustomInput'
 import FormWithCustomHooks from './effects/reusingLogicWithCustomHooks'
 import MiscExamples from './misc/MiscExamples'
+import styles from './styles.module.css'
 
 interface ViewRouteProps extends ViewProps {
   element: JSX.Element
@@ -81,19 +80,21 @@ const views: ViewRouteProps[] = [
 
 function App() {
   return (
-    <div>
+    <div className={styles.appContainer}>
       <BrowserRouter>
-        <NavigationBar pages={views}>
-          <Routes>
-            {views.map(x => (
-              <Route
-                key={x.path}
-                path={x.path}
-                element={x.element}
-              />
-            ))}
-          </Routes>
-        </NavigationBar>
+        <NavigationBar
+          pages={views}
+          className={styles.navContainer}
+        />
+        <Routes>
+          {views.map(x => (
+            <Route
+              key={x.path}
+              path={x.path}
+              element={x.element}
+            />
+          ))}
+        </Routes>
       </BrowserRouter>
     </div>
   )

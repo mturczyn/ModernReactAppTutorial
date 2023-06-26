@@ -42,3 +42,34 @@
   margin: 1rem;
   padding: 1rem;
 }
+
+.appContainer {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  height: 100%;
+  grid-template-rows: 1fr;
+}
+
+.navContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.navContainer {
+  grid-column-start: 0;
+  grid-column-end: 1;
+  grid-row-start: 0;
+  grid-row-end: 1;
+  height: 100vh;
+  background-color: #aaffaa;
+  border: solid #004e0a;
+  overflow-y: scroll;
+}
+
+.navContainer + div {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.navContainer > img {
+  width: 10rem;
+}

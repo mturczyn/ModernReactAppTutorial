@@ -1,7 +1,6 @@
 import { useCallback, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './styles.module.css'
-import clsx from 'clsx'
 
 export interface ViewProps {
   label: string
@@ -10,7 +9,7 @@ export interface ViewProps {
 
 interface NavigationBarProps {
   pages: ViewProps[]
-  children: JSX.Element
+  className: string
 }
 
 function NavigationButton(props: ViewProps) {
@@ -37,14 +36,12 @@ function NavigationButton(props: ViewProps) {
 export default function NavigationBar(props: NavigationBarProps) {
   return (
     <div>
-      <div className={styles.naviContainer}>
-        <div
-          style={{
-            overflowY: 'scroll',
-            overflowX: 'hidden',
-            maxHeight: '35rem',
-          }}
-        >
+      <div className={props.className}>
+        <img
+          src='bluey.avif'
+          alt='Bluey!'
+        />
+        <div>
           {props.pages.map(x => (
             <NavigationButton
               label={x.label}
@@ -53,12 +50,7 @@ export default function NavigationBar(props: NavigationBarProps) {
             />
           ))}
         </div>
-        <img
-          src='bluey.avif'
-          alt='Bluey!'
-        />
       </div>
-      <div>{props.children}</div>
     </div>
   )
 }

@@ -6,10 +6,11 @@ import SuspenseExampleWithSuspensibleComponent from './suspenseAndDeferredValue/
 import { DeferredValueExample } from './suspenseAndDeferredValue/DeferredValueExample'
 import WecomingPanelWithLazyLoading from './suspenseAndDeferredValue/componentsForLazyLoad/WelcomingPanelWithLazyLoading'
 import UseIdExample from './UseIdExample'
+import styles from '../styles.module.css'
 
 export default function MiscExamples() {
   return (
-    <div className='examplesContainer'>
+    <div className={styles.examplesContainer}>
       <SuspenseExampleWithSuspensibleComponent />
       <DeferredValueExample />
       <LazyExample />
