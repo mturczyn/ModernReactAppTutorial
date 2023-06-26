@@ -7,6 +7,7 @@ import { DeferredValueExample } from './suspenseAndDeferredValue/DeferredValueEx
 import WecomingPanelWithLazyLoading from './suspenseAndDeferredValue/componentsForLazyLoad/WelcomingPanelWithLazyLoading'
 import UseIdExample from './UseIdExample'
 import styles from '../styles.module.css'
+import ImperativeHandlesExample from './ImperativeHandleExample'
 
 export default function MiscExamples() {
   return (
@@ -19,6 +20,7 @@ export default function MiscExamples() {
       <TabContainer />
       <WecomingPanelWithLazyLoading />
       <UseIdExample />
+      <ImperativeHandlesExample />
     </div>
   )
 }
