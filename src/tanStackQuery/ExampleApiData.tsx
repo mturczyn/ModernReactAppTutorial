@@ -3,6 +3,7 @@ import {
   QueryClientProvider,
   useQuery,
 } from '@tanstack/react-query'
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown'
 
 const queryClient = new QueryClient()
 
@@ -13,6 +14,32 @@ export default function TanStackApp() {
         <p>
           Below is example of fetching data from API with TanStack npm package.
         </p>
+        <p>To run locally some sample API, use csharprepl for that:</p>
+        <ReactMarkdown>{`\`\`\`
+csharprepl --framework Microsoft.AspNetCore.App
+\`\`\``}</ReactMarkdown>
+        <p>And paste code below</p>
+        <ReactMarkdown>
+          {`\`\`\`
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Builder;
+using System.Text.Json;
+
+var builder = WebApplication.CreateBuilder();
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(p => p.AllowAnyOrigin());
+});
+
+var app = builder.Build();
+
+app.UseCors();
+
+app.MapGet("example", () => JsonSerializer.Serialize(new { name = "Michal" }));
+
+app.Run();
+\`\`\``}
+        </ReactMarkdown>
         <Example />
       </QueryClientProvider>
     </div>
@@ -35,7 +62,6 @@ function Example() {
 
   return (
     <div>
-      User data
       <h1>{data.name}</h1>
       <p>{data.description}</p>
       <strong>👀 {data.subscribers_count}</strong>{' '}
