@@ -8,6 +8,7 @@ import WecomingPanelWithLazyLoading from './suspenseAndDeferredValue/componentsF
 import UseIdExample from './UseIdExample'
 import styles from '../styles.module.css'
 import ImperativeHandlesExample from './ImperativeHandleExample'
+import UseLayoutEffectExample from './UseLayoutEffectExample'
 
 export default function MiscExamples() {
   return (
@@ -21,6 +22,7 @@ export default function MiscExamples() {
       <WecomingPanelWithLazyLoading />
       <UseIdExample />
       <ImperativeHandlesExample />
+      <UseLayoutEffectExample />
     </div>
   )
 }
