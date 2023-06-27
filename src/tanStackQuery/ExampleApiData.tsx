@@ -17,7 +17,18 @@ export default function TanStackApp() {
     <div>
       <QueryClientProvider client={queryClient}>
         <p>
-          Below is example of fetching data from API with TanStack npm package.
+          Below is example of fetching data from API with{' '}
+          <a href='https://tanstack.com/query/latest/docs/react/overview'>
+            TanStack
+          </a>{' '}
+          npm package.
+        </p>
+        <p>
+          Alternative to <b>TanStack</b> is{' '}
+          <a href='https://redux.js.org/tutorials/essentials/part-1-overview-concepts'>
+            Redux
+          </a>{' '}
+          npm package.
         </p>
         <p>
           To run locally some sample API, use csharprepl for that (.NET is
