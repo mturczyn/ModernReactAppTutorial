@@ -1,4 +1,4 @@
-.naviButton {
+.navButton {
   margin: 0.5rem;
   width: 8rem;
   height: 3rem;
@@ -10,7 +10,7 @@
   overflow: hidden;
 }
 
-.naviButton:hover {
+.navButton:hover {
   color: #aaffaa;
   background-color: #004e0a;
   cursor: pointer;

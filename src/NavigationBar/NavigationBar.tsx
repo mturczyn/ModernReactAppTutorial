@@ -23,7 +23,7 @@ function NavigationButton(props: ViewProps) {
   return (
     <button
       style={clicked ? { backgroundColor: '#007910' } : {}}
-      className={styles.naviButton}
+      className={styles.navButton}
       onClick={handleClick}
       onMouseDown={() => setClikced(true)}
       onMouseUp={() => setClikced(false)}
@@ -35,21 +35,19 @@ function NavigationButton(props: ViewProps) {
 
 export default function NavigationBar(props: NavigationBarProps) {
   return (
-    <div>
-      <div className={props.className}>
-        <img
-          src='bluey.avif'
-          alt='Bluey!'
-        />
-        <div>
-          {props.pages.map(x => (
-            <NavigationButton
-              label={x.label}
-              path={x.path}
-              key={x.path}
-            />
-          ))}
-        </div>
+    <div className={props.className}>
+      <img
+        src='bluey.avif'
+        alt='Bluey!'
+      />
+      <div>
+        {props.pages.map(x => (
+          <NavigationButton
+            label={x.label}
+            path={x.path}
+            key={x.path}
+          />
+        ))}
       </div>
     </div>
   )
