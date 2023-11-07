@@ -14,10 +14,11 @@ COPY . /app
 ENV CI=false
 ENV PORT=3000
 
-CMD [ "npm", "start" ]
+# not sure why it's needed
+# CMD [ "npm", "start" ]
 
-
-FROM development AS build
+# I guess it's just 'rename'
+# FROM development AS build
 
 RUN npm run build
 
@@ -25,15 +26,15 @@ RUN npm run build
 FROM nginx:alpine
 
 # Copy config nginx
-COPY --from=build /app/.nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=development /app/.nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 WORKDIR /usr/share/nginx/html
 
 # Remove default nginx static assets
 RUN rm -rf ./*
 
-# Copy static assets from builder stage
-COPY --from=build /app/build .
+# Copy static assets from builder stage to nginx
+COPY --from=development /app/build .
 
 # Containers run nginx with global directives and daemon off
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
