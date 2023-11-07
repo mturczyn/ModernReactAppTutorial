@@ -2,7 +2,6 @@ import { VideoApplication } from './VideoApplication'
 import { PopupApplicationToggle } from './PopupApplicationToggle'
 import { TimerCounterExample } from './TimerCounter'
 import { IsOnlineIndicator } from './IsOnlineIndicator'
-import { ChatApp } from './eventsAndEffects'
 
 export function EffectsExamples() {
   return (
