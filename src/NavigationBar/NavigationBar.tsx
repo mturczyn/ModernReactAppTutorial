@@ -5,6 +5,7 @@ import styles from './styles.module.css'
 export interface ViewProps {
   label: string
   path: string
+  withSubPages?: boolean
 }
 
 interface NavigationBarProps {

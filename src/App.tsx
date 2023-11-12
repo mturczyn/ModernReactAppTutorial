@@ -16,6 +16,7 @@ import FormWithCustomHooks from './effects/reusingLogicWithCustomHooks'
 import MiscExamples from './misc/MiscExamples'
 import styles from './styles.module.css'
 import TanStackApp from './tanStackQuery/ExampleApiData'
+import { ReactRouterExamples } from './reactRouter'
 
 interface ViewRouteProps extends ViewProps {
   element: JSX.Element
@@ -82,6 +83,12 @@ const views: ViewRouteProps[] = [
     element: <TanStackApp />,
     label: 'TanStack Example',
   },
+  {
+    path: 'reactrouterexamples',
+    element: <ReactRouterExamples />,
+    label: 'React Router',
+    withSubPages: true,
+  },
 ]
 
 function App() {
@@ -95,8 +102,8 @@ function App() {
         <Routes>
           {views.map(x => (
             <Route
+              path={x.withSubPages ? x.path + '/*' : x.path}
               key={x.path}
-              path={x.path}
               element={x.element}
             />
           ))}
